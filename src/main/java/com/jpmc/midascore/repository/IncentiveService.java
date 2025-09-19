@@ -13,7 +13,6 @@ public class IncentiveService {
     private RestTemplate restTemplate;
 
     public Incentive fetchIncentive(Transaction transaction) {
-        String url = "http://localhost:8080/incentive";
-        return restTemplate.postForObject(url, transaction, Incentive.class);
+        return restTemplate.postForObject("${incentive-api-url}", transaction, Incentive.class);
     }
 }
